@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
 
-    devtools: { enabled: true },
+  devtools: { enabled: true },
 
   modules: [
     '@nuxt/eslint',
@@ -10,8 +10,18 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/scripts',
     '@nuxt/ui',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
   ],
 
-  css: ['~/assets/scss/main.scss']
+  css: ['./assets/css/main.css', './assets/scss/styles.scss'],
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "./assets/scss/_variables.scss" as *;',
+        },
+      },
+    },
+  },
 })

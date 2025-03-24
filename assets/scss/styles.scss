@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+body {
+  font-family: $font-sans;
+}
+
+.container {
+  padding: 1rem;
+
+  @include sm {
+    padding: 2rem;
+  }
+
+  @include md {
+    padding: 3rem;
+  }
+
+  @include lg {
+    padding: 4rem;
+  }
+}
