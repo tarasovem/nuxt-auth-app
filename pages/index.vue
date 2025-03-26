@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '@nuxt/ui'
 import * as z from 'zod'
+import { useAuthStore } from '~/stores/auth'
 
 // Схема валидации
 const schema = z.object({
@@ -21,17 +22,31 @@ const state = reactive<FormData>({
 })
 
 const isLoading = ref(false)
+const authStore = useAuthStore()
+const router = useRouter()
+const form = ref()
 
 async function onSubmit(event: FormSubmitEvent<FormData>) {
   try {
     isLoading.value = true
-    console.log('Form data:', event.data)
+    await authStore.login(event.data.email, event.data.password)
+    await router.push('/account')
   } catch (error) {
-    console.error('Ошибка при отправке формы:', error)
+    form.value?.setErrors([
+      {
+        name: 'email',
+        message: (error as Error).message,
+      },
+    ])
   } finally {
     isLoading.value = false
   }
 }
+
+// Проверяем авторизацию при загрузке
+onMounted(() => {
+  authStore.checkAuth()
+})
 </script>
 
 <template>
@@ -40,6 +55,7 @@ async function onSubmit(event: FormSubmitEvent<FormData>) {
       <div class="text-xl font-semibold text-center mb-4">Вход в систему</div>
 
       <UForm
+        ref="form"
         :state="state"
         :schema="schema"
         @submit="onSubmit"

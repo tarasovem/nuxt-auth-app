@@ -1,0 +1,35 @@
+[
+  {
+    "name": "David",
+    "surname": "Jones",
+    "credentials": {
+      "username": "david.jones@creds.com",
+      "passphrase": "0a3e557a5aa3fb41dd424ef8d71e77e2daed5d84c5e25121b3d95bfa598f76704af5b62f700e26d42caa96d3abf359d1c3653a03aaf28018304de477847e4cb1"
+    },
+    "active": true,
+    "created": "03.03.2025 10:00:21",
+    "_comment": "Пользователь David Jones с логином david.jones@creds.com и паролем '8u3&s-1uda'"
+  },
+  {
+    "name": "Samantha",
+    "surname": "Robertson",
+    "credentials": {
+      "username": "sam.robertson@creds.com",
+      "passphrase": "f799c59eadfff2e45a1ddcd5be48507bde64241aeda37352d6b2873d46d50eb0b2987106b5922d0e86c0b6ab1824282572270168f4f163fcd1a5ac73be6a3d96"
+    },
+    "active": true,
+    "created": "03.03.2025 10:28:13",
+    "_comment": "Пользователь Samantha Robertson с логином sam.robertson@creds.com и паролем '0k91sa639'"
+  },
+  {
+    "name": "Nicholas",
+    "surname": "Crew",
+    "credentials": {
+      "username": "nic.crew@creds.com",
+      "passphrase": "3757604e9196ce8c080e01846e088bebb0ed2a079d3ec092df2c5bdce35c2bf64683125395c63746023198933166a59ae296b050fb1c357a20f43d212d191b0e"
+    },
+    "active": false,
+    "created": "01.03.2025 12:56:28",
+    "_comment": "Пользователь Nicholas Crew с логином nic.crew@creds.com и паролем '1atr48asf03'"
+  }
+]
